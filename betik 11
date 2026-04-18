@@ -1,0 +1,76 @@
+hatice nisa kzılbaglı
+echo "birinci sayıyı girin:"
+read sayi1
+echo "ikinci sayiy girin"
+read sayi2
+
+echo "işlem secin"
+read menu
+
+echo "1- toplama"
+read menu
+echo "2- çıkarma "
+read menu 
+echo "3- çarpma"
+read menu
+echo "4- bölme" 
+read menu
+
+if [ $menu -eq  1 ]; then
+        echo "sonuc: $((sayi1+sayi2))"
+
+elif [ $menu -eq 2 ]; then
+        echo "sonuc: $((sayi1-sayi2))"
+
+ elif [ $menu -eq 3 ]; then
+        echo "sonuc: $((sayi1*sayi2))"
+
+elif [ $menu -eq 4 ]; then
+        echo "sonuc: $((sayi1/sayi2))"
+
+else    
+        echo "hata"
+fi
+ --------------------------------------------
+ read -p "a değerini girin (0 veya 1): " a
+read -p "b değerini girin (0 veya 1): " b
+
+# Eğer a = 1 VE b = 1 ise
+if [[ $a -eq 1 && $b -eq 1 ]]; then
+    d="Sonuç: İkisi de doğru (çalıştı)"
+    echo "$d"
+
+# Eğer a = 1 VEYA b = 1 ise if çalışmadığına göre sadece biri 1dir
+elif [[ $a -eq 1 || $b -eq 1 ]]; then
+    d="Sonuç: Sadece biri doğru (VEYA çalıştı)"
+    echo "$d"
+
+# İkisi de 0 ise
+else
+    d="Sonuç: İkisi de yanlış"
+    echo "$d"
+fi
+----------------------------------------------------
+echo "sayi1 girin:"
+read a
+echo "sayi2 girin:"
+read b
+echo " islem sec: 1-and 2-or 3-not"
+read k
+if [ $k -eq '1' ];then
+	echo $((a&&b))
+elif [ $k -eq '2' ];then
+	echo $((a||b))
+elif [ $k -eq '3' ];then
+	echo " islem sec: 1-and 2-or 3-sayi1 4-sayi2"
+	read kk
+	if [ $kk -eq '1' ];then
+		echo $((!(a&&b)))
+	elif [ $kk -eq '2' ];then
+		echo $((!(a||b)))
+	elif [ $kk -eq '3' ];then
+		echo $((!(a)))
+	elif [ $kk -eq '4' ];then
+		echo $((!(b)))
+	fi
+fi
